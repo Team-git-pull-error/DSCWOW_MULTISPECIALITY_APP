@@ -16,6 +16,23 @@ def skin_cancer_predictor():
     return render_template("skin-cancer-predictor.html")
 
 
+# To navigate the user to mri scan predictor web page
+@app.route("/mri-scan-predictor")
+def mri_scan_predictor():
+    return render_template("mri-scan-predictor.html")
+
+
+# To navigate the user to CT scan predictor web page
+@app.route("/ct-scan-predictor")
+def ct_cancer_predictor():
+    return render_template("ct-scan-predictor.html")
+
+# To navigate the user to xray scan predictor web page
+@app.route("/xray-scan-predictor")
+def xray_cancer_predictor():
+    return render_template("xray-scan-predictor.html")
+
+
 # To navigate the user to skin cancer predictor results web page
 @app.route("/skin-cancer-predictor-results")
 def skin_cancer_predictor_results():
@@ -28,8 +45,8 @@ def upload_skin_cancer_image():
     my_test_image = request.files['image']
     image_name = my_test_image.filename
     if my_test_image is not None:
-        my_path = os.path.join("multi speciality app/static/uploads/images/temp/", str(image_name))
-        my_test_image.save(my_path)
+        # my_path = os.path.join("/static/uploads/images/temp/", str(image_name))
+        my_test_image.save("static/uploads/images/temp/"+image_name)
         ###########################
         #   WRITE AI CODE HERE    #
         ###########################

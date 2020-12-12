@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <title>Mobile| Results</title>
+    <title>Mobile| Predictor</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
@@ -200,23 +200,24 @@ img {
       <span class="title-header"></span>
     </div>
     <div class="container-body-header">
-      <span class="money-header">Predictor results</span>
+      <span class="money-header">MRI scan predictor</span>
       <span class="description-money">Test your scanned results on your phone</span>
     </div>
        <img src="{{ url_for('static',filename='/images/main-image-heading.png') }}" alt="vector" class="vector-header">
   </div>
   <div class="wrapper-body">
-    <!--
-    VISHNU NEEDS TO EMBED JINJA TO SHOW THE CONTENT IN THE RESULTS
-    -->
-     <h3>RESULTS* : </h3>
-    <h6>* Accuracy of the AI model is 55%</h6>
-    <p>STATEMENT : PERSON HAS CANCER</p>
-    <p>PRESENT ALL THE DETAILS HERE</p>
-    <br><br><br>
-     <button class="w3-button w3-purple" onclick="location.href = '/skin-cancer-predictor';" id="myButton"  style="border-radius: 25px;width: 150px; margin-top: 35px">try again</button>
-     <button class="w3-button w3-pink" onclick="location.href = '/';" id="notmyButton"  style="border-radius: 25px;width: 150px; margin-top: 35px">Home</button>
+     <form action = "" method = "post" enctype="multipart/form-data" name="form1"><br><br>
 
+
+        <div class="fileContainer">
+            <input type="file" name="image" class="w3-button w3-purple" accept="jpg" required>
+          <button class="w3-button w3-purple" style="border-radius: 25px;width: 150px; margin-top: 35px">upload image</button>
+       </div><br>
+        <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
+      <br>
+    </form>
   </div><br><br>
   <div class="navbar">
      <a href=""> <i class="fas fa-paper-plane"></i></a>
